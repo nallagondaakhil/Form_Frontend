@@ -1,0 +1,400 @@
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .save {
+            height: auto;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+        }
+
+        .details {
+            height: auto;
+            padding: 2px;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+        }
+
+        .address {
+            height: auto;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+            padding: 10px;
+        }
+
+        .comment {
+            height: auto;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+            padding: 10px;
+            width: 100%;
+        }
+
+        .details label {
+            width: 40%;
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+
+        label {
+            font-size: 15px;
+        }
+
+        .details input[type=text] {
+            max-width: 70%;
+            display: inline-block;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            padding: 7px;
+            margin: 5px 0 5px 0;
+            border: none;
+            font-size: 16px;
+            border-radius: 13px;
+        }
+
+        .address label {
+            display: inline-block;
+            margin-bottom: 1em;
+            margin: 0 0 0 5px;
+        }
+
+
+        .address input[type=text] {
+            width: 70%;
+            display: inline-block;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            padding: 7px;
+            margin: 0 0 0 95px;
+            border: none;
+            font-size: 16px;
+            border-radius: 13px;
+        }
+
+        .ButtonCss {
+            background-color: #999999;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            width: 100px;
+            height: 40px;
+        }
+
+
+        select {
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: none;
+            background: #f1f1f1;
+            font-size: 16px;
+            border-radius: 13px;
+        }
+
+        textarea {
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            border: none;
+            font-size: 16px;
+            border-radius: 13px;
+            margin: 0 0 0 105px;
+        }
+
+        .save {
+            height: auto;
+            /* background-color: #dcd1d1; */
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+        }
+
+
+        #headData {
+            color: brown;
+            font-size: 25px;
+        }
+
+        #status {
+            color: brown;
+            font-size: 25px;
+        }
+
+        .OpenLogs {
+            background-color: #dcd1d1;
+            font-size: 20px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            width: 100px;
+            height: 40px;
+            margin-left: auto;
+            display: block;
+        }
+
+        button {
+            width: 160px;
+            height: 50px;
+            border-radius: 100px;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="details">
+
+        <center><span id="status"></span></center>
+        <p id="message"></p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="fname">Customer Name:</label>
+                    <input type="text" placeholder="" id="customerName" />
+                </div>
+                <div class="col-md-4">
+                    <label for="fname">Contact Person Name:</label>
+                    <input type="text" placeholder="" id="contactPerson" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-0">
+                    <label for="mno1">Mobile Number:</label>
+                    <input type="text" placeholder="" class="form-control-static" id="mobileNumber" readonly
+                        maxlength="10" />
+                </div>
+                <div class="col-md-4">
+                    <label for="mno2">Alternate Number:</label>
+                    <input type="text" placeholder="" id="alternateNumber" maxlength="10" />
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-0">
+                    <label for="City">City:</label>
+                    <input type="text" placeholder="" id="city" />
+                </div>
+                <div class="col-md-4">
+                    <label for="disp2">State:</label>
+                    <select id="state">
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra</option>
+                        <option value="Daman and Diu">Daman</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="email">Email id:</label>
+                    <input type="text" placeholder="" id="email" />
+                </div>
+                <div class="col-md-4">
+                    <label for="email">Postal Code:</label>
+                    <input type="text" placeholder="" id="postalcode" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="address col-md-12">
+                <label for="addr">Address1:</label>
+                <input type="text" placeholder="" id="addr1" maxlength="150">
+            </div>
+        </div>
+        <div class="row">
+            <div class="address col-md-12">
+                <label for="addr">Address2:</label>
+                <input type="text" placeholder="" id="addr2" maxlength="150">
+            </div>
+        </div>
+        <div class="row">
+            <div class="address col-md-12">
+                <label for="addr">Address3:</label>
+                <input type="text" placeholder="" id="addr3" maxlength="150">
+            </div>
+        </div>
+    </div>
+
+    <div class="save">
+        <center><span id="headData"></span></center>
+        <center><button onclick="updateCrmDetails()">click</button></center>
+
+    </div>
+</body>
+<script>
+
+    var firstId = "";
+    var httpurl = "";
+ 
+
+    httpurl = "http://192.168.0.2:1234";
+    var CustomerDetailsbaseUrl = " " + httpurl + "/crmdetails/PrimaryNumber/"; //Retrieving Customer Details from DB
+    var UpdateCustomerBaseUrl = " " + httpurl + "/crmdetails/updateCrmDetails/";   //Updating the Customer Details to DB  
+
+    var retrievingnumber = location.search.substring(8);//getting the Mobile Number value from Host URL
+
+    if (retrievingnumber == undefined || retrievingnumber == null || retrievingnumber.trim() == "") {
+
+    } else {
+        getMobileDetails(retrievingnumber);
+    }
+
+    //Retrieving  of Customer details from DB 
+    function getMobileDetails(retrievingnumber) {
+        var data = "";
+        console.log("retrievingnumber................" + retrievingnumber);
+        $.ajax({
+            url: CustomerDetailsbaseUrl + retrievingnumber,
+            method: 'GET',
+            dataType: "json",
+            success: function (data) {
+                //passing parameters through Ajax to DB
+                var customerName = data["CustomerName"];
+                var contactPersonName = data["ContactPersonName"];
+                var mobileNumber = data["MobileNumber"];
+                firstId = mobileNumber;
+                var alternateNumber = data["AlternateNumber"];
+                var email = data["Email"];
+                var city = data["City"];
+                var state = data["State"];
+                var postalCode = data["PostalCode"];
+                var address1 = data["Address1"];
+                var address2 = data["Address2"];
+                var address3 = data["Address3"];
+
+                $('#customerName').val(customerName);
+                $('#contactPerson').val(contactPersonName);
+                $('#mobileNumber').val(mobileNumber);
+                $('#alternateNumber').val(alternateNumber);
+                $('#email').val(email);
+                $('#city').val(city);
+                $('#state').val(state);
+                $('#postalcode').val(postalCode);
+                $('#addr1').val(address1);
+                $('#addr2').val(address2);
+                $('#addr3').val(address3);
+
+                var Data = "Data Retreived..";
+                $("#status").append(Data);
+
+                setTimeout(function (Data) {
+                    $("#status").remove(Data);
+                }, 5000);
+                console.log("Successs...");
+
+            }, error: function () { 
+                console.log("Error...");          //Customer Detailes error code
+                $("#headData").append(error);
+                setTimeout(function (error) {
+                    $("#headData").remove(error);
+                }, 3000);
+            }
+        });
+    }
+
+
+
+    function updateCrmDetails() {
+        console.log("callDataTimeS=====ll");
+
+        var mobileNumberValue = document.getElementById("mobileNumber").value;
+        var customerNameValue = document.getElementById("customerName").value;
+        var contactPersonValue = document.getElementById("contactPerson").value;
+        var alternateNumberValue = document.getElementById("alternateNumber").value;
+        var emailValue = document.getElementById("email").value;
+        var cityValue = document.getElementById("city").value;
+        var stateValue = document.getElementById("state").value;
+        var postalcodeValue = document.getElementById("postalcode").value;
+        var addr1Value = document.getElementById("addr1").value;
+        var addr2Value = document.getElementById("addr2").value;
+        var addr3Value = document.getElementById("addr3").value;
+
+        //Updating Customer Details     
+        $.ajax(
+            {
+                type: 'post',
+                url: UpdateCustomerBaseUrl + mobileNumberValue,
+                data: {
+
+                    //customerDetails
+                    "CustomerName": customerNameValue,
+                    "ContactPersonName": contactPersonValue,
+                    "AlternateNumber": alternateNumberValue,
+                    "Email": emailValue,
+                    "City": cityValue,
+                    "State": stateValue,
+                    "PostalCode": postalcodeValue,
+                    "Address1": addr1Value,
+                    "Address2": addr2Value,
+                    "Address3": addr3Value,
+
+                },
+                success: function (response) {
+                    var clearData = $("#headData").append(response);
+                    setTimeout(function (clearData) {
+                        $("#headData").remove(clearData);
+                        document.getElementById("customerName").value = "";
+                        document.getElementById("contactPerson").value = "";
+                        document.getElementById("mobileNumber").value = "";
+                        document.getElementById("alternateNumber").value = "";
+                        document.getElementById("email").value = "";
+                        document.getElementById("city").value = "";
+                        document.getElementById("state").value = "";
+                        document.getElementById("postalcode").value = "";
+                        document.getElementById("addr1").value = "";
+                        document.getElementById("addr2").value = "";
+                        document.getElementById("addr3").value = "";
+                    }, 4000);
+                },
+            }
+        );
+    }
+
+</script>
+
+</html>
